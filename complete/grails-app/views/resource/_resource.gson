@@ -1,0 +1,11 @@
+import example.Resource
+
+model {
+    Resource resource
+}
+
+json {
+    id resource.id
+    name resource.name
+    description resource.description
+}

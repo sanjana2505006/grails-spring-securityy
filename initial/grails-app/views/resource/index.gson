@@ -1,0 +1,11 @@
+import example.Resource
+
+model {
+    Iterable<Resource> resourceList
+    Long resourceCount
+}
+
+json {
+    total resourceCount ?: resourceList?.size()
+    resources g.render(template: '/resource/resource', collection: resourceList ?: [], var: 'resource')
+}
